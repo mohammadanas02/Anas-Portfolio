@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <h1></h1>
+        <nav class="menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="home">
+        <div class="content">
+            <img src="anas_image.jpeg" alt="Profile Picture">
+            <div>
+                <h1>Hello, I'm Anas.</h1>
+                <p>Let's embrace the journey of innovation through data and technology.</p>
+                <p>Inspire, Innovate, and Transform through Data Science.</p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="about">
+        <div class="content">
+            <h2>About Me</h2>
+            <p>I'm a passionate Data Scientist, driven by the power of data and technology to create meaningful change. With expertise in data analysis, machine learning, and data-driven solutions, I thrive on solving complex problems and driving innovation.</p>
+            <p>My mission is to empower businesses and individuals through data, helping them unlock new opportunities and make informed decisions. I believe in continuous learning and adapting to the ever-evolving world of data science.</p>
+        </div>
+    </section>
+
+    
+    <section id="projects">
+        <div class="content">
+            <h2>My Projects</h2>
+            <p>Explore some of the exciting projects I've worked on, where I applied my skills in data science to solve real-world problems and create impactful solutions.</p>
+            <div class="project-list">
+                <div class="project">
+                    <h3>House Price Prediction</h3>
+                    <p>Developed an end-to-end machine learning model to predict house prices with an accuracy of 89%. The model incorporated feature engineering, multivariate analysis, and MLOps integration for seamless deployment.</p>
+                    <a href="#project-details" class="btn">Learn More</a>
+                </div>
+                <div class="project">
+                    <h3>Wine Quality Analysis</h3>
+                    <p>Analyzed a wine quality dataset using various machine learning techniques to predict wine quality based on various chemical properties. Focused on feature selection and model optimization.</p>
+                    <a href="#project-details" class="btn">Learn More</a>
+                </div>
+                <div class="project">
+                    <h3>Business Data Management</h3>
+                    <p>Developed an end-to-end machine learning model to predict house prices with an accuracy of 89%. The model incorporated feature engineering, multivariate analysis, and MLOps integration for seamless deployment.</p>
+                    <a href="#project-details" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="certificates">
+        <div class="certificate-container">
+            <h2>My Certificates</h2>
+            <div class="certificate-slider-container">
+                <button class="slider-arrow left-arrow" id="leftArrow">&lt;</button>
+                <div class="certificate-slider">
+                    <div class="certificate-card">
+                        <img src="Tata Certificate_page-0001.jpg" alt="Certificate 1">
+                    </div>
+                    <div class="certificate-card">
+                        <img src="IITM Certificate_page-0001.jpg" alt="Certificate 2">
+                    </div>
+                    <div class="certificate-card">
+                        <img src="PW Certificate_page-0001.jpg" alt="Certificate 3">
+                    </div>
+                    <div class="certificate-card">
+                        <img src="IITG Certificate.png" alt="Certificate 4">
+                    </div>
+                    <div class="certificate-card">
+                        <img src="Kaggle certificate.png" alt="Certificate 5">
+                    </div>
+                    <div class="certificate-card">
+                        <img src="Kaggle sql.jpeg" alt="Certificate 5">
+                    </div>
+                </div>
+                <button class="slider-arrow right-arrow" id="rightArrow">&gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="content">
+            <h2>Contact Me</h2>
+            <p>I'm always open to new opportunities and collaborations. Feel free to reach out if you'd like to discuss a project, partnership, or simply connect over data science.</p>
+            <form action="submit_form.php" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2024 Mohammad Anas. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>   
+</body>
+</html>
+

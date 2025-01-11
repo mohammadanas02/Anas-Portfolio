@@ -1,0 +1,351 @@
+/* General Styles */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #879eb0, #27343e); /* Global gradient */
+    color: #fdf8f8; /* Light text for contrast */
+    overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: transparent; /* No background on navbar */
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .menu a {
+    text-decoration: none;
+    color: #f3f4f5;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Home Section */
+#home {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 20px;
+}
+
+#home::before {
+    content: "Mohammad Anas";
+    font-family: 'Poppins', sans-serif;
+    font-size: 155px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.home .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+}
+
+.home img {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.home img:hover {
+    transform: scale(1.05);
+}
+
+.home h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.home p {
+    font-size: 18px;
+    margin: 10px 0 20px;
+    line-height: 1.6;
+}
+
+.home .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #273554;
+    color: #f5f0e6;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.home .btn:hover {
+    background-color: #704824;
+}
+
+/* About Section */
+#about {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#about h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #f3f4f5;
+}
+
+/* Projects Section */
+#projects {
+    padding: 80px 20px;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.project h3 {
+    font-size: 24px;
+    color: #fff;
+}
+
+.project p {
+    font-size: 18px;
+    color: #f3f4f5;
+}
+
+.project .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #273554;
+    color: #f5f0e6;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.project .btn:hover {
+    background-color: #704824;
+}
+
+.certificates {
+    padding: 50px 20px;
+    text-align: center;
+    color: #ffffff;
+    background: transparent;
+}
+
+.certificate-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.certificates h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.certificate-slider-container {
+    position: relative;
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+.certificate-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 20px 0;
+}
+
+.certificate-card {
+    flex: 0 0 auto;
+    width: 340px;
+    height: 240px;
+    scroll-snap-align: start;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.certificate-card:hover {
+    transform: scale(1.05);
+}
+
+.certificate-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    .certificate-card {
+        width: 250px;
+        height: 170px;
+    }
+    
+    .certificate-slider-container {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificate-card {
+        width: 200px;
+        height: 140px;
+    }
+    
+    .certificate-slider-container {
+        padding: 0 30px;
+    }
+}
+
+
+/* Contact Section */
+#contact {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #333;
+}
+
+form button {
+    padding: 12px 20px;
+    background-color: #273554;
+    color: #f5f0e6;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #704824;
+}
+
+footer {
+    background-color: #2e373e;
+    text-align: center;
+    padding: 20px 0;
+    color: #f5f0e6;
+}
+
+
+@media (max-width: 768px) {
+    .home h1 {
+        font-size: 28px;
+    }
+
+    .home p {
+        font-size: 16px;
+    }
+
+    .project {
+        max-width: 100%;
+    }
+
+    .certificate-card {
+        width: 150px; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .home h1 {
+        font-size: 24px;
+    }
+
+    .home p {
+        font-size: 14px;
+    }
+}
