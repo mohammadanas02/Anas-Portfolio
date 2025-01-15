@@ -1,20 +1,48 @@
-/* General Styles */
+/* Background Styles */
 body {
-    font-family: 'Georgia', serif;
+    background: linear-gradient(180deg, #879eb0, #27343e);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #f3f4f5;
     margin: 0;
-    padding: 0;
-    background: linear-gradient(180deg, #879eb0, #27343e); /* Global gradient */
-    color: #fdf8f8; /* Light text for contrast */
     overflow-x: hidden;
 }
 
-/* Navbar Styles */
+/* Add particles.js container */
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Profile Photo */
+.profile-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 20%;
+    object-fit: cover;
+    margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+    .profile-photo {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background: transparent; /* No background on navbar */
+    background: transparent;
+    position: relative;
+    z-index: 10;
 }
 
 .navbar .menu {
@@ -29,31 +57,49 @@ body {
     font-weight: bold;
 }
 
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #f3f4f5;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar .menu {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .navbar .menu a {
+        padding: 10px 20px;
+        text-align: center;
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+}
+
 /* Home Section */
 #home {
-    position: relative;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 80vh;
     padding: 0 20px;
-}
-
-#home::before {
-    content: "Mohammad Anas";
-    font-family: 'Poppins', sans-serif;
-    font-size: 155px;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.1);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    white-space: nowrap;
 }
 
 .home .content {
@@ -61,11 +107,12 @@ body {
     flex-wrap: wrap;
     gap: 30px;
     align-items: center;
+    text-align: center;
 }
 
 .home img {
-    width: 100%;
-    max-width: 440px;
+    width: 50%;
+    max-width: 400px;
     height: auto;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -85,11 +132,10 @@ body {
 .home p {
     font-size: 18px;
     margin: 10px 0 20px;
-    line-height: 1.6;
+    /* line-height: 1.6; */
 }
 
 .home .btn {
-    display: inline-block;
     padding: 10px 20px;
     background-color: #273554;
     color: #f5f0e6;
@@ -101,6 +147,16 @@ body {
 
 .home .btn:hover {
     background-color: #704824;
+}
+
+@media (max-width: 768px) {
+    .home h1 {
+        font-size: 28px;
+    }
+
+    .home p {
+        font-size: 16px;
+    }
 }
 
 /* About Section */
@@ -120,12 +176,23 @@ body {
 #about p {
     font-size: 18px;
     line-height: 1.6;
-    color: #f3f4f5;
 }
 
 /* Projects Section */
-#projects {
+/* #projects {
     padding: 80px 20px;
+} */
+
+#projects h2 {
+    font-size: 32px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+#projects p{
+    text-align: center;
 }
 
 .project-list {
@@ -152,11 +219,9 @@ body {
 
 .project p {
     font-size: 18px;
-    color: #f3f4f5;
 }
 
 .project .btn {
-    display: inline-block;
     padding: 10px 20px;
     background-color: #273554;
     color: #f5f0e6;
@@ -170,45 +235,44 @@ body {
     background-color: #704824;
 }
 
+@media (max-width: 768px) {
+    .project {
+        max-width: 100%;
+    }
+}
+
 .certificates {
-    padding: 50px 20px;
+    font-size: 32px;
     text-align: center;
-    color: #ffffff;
-    background: transparent;
+    padding: 80px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
-.certificate-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.certificates h2 {
-    font-size: 2.5em;
-    margin-bottom: 40px;
+.certificate-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fffefe;
 }
 
 .certificate-slider-container {
+    display: flex;
+    align-items: center;
     position: relative;
-    width: 100%;
-    padding: 0 50px;
-    box-sizing: border-box;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .certificate-slider {
     display: flex;
     gap: 20px;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    padding: 20px 0;
+    transition: transform 0.4s ease-in-out;
 }
 
 .certificate-card {
-    flex: 0 0 auto;
-    width: 340px;
-    height: 240px;
-    scroll-snap-align: start;
+    flex: 0 0 500px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -221,67 +285,70 @@ body {
 
 .certificate-card img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
 }
 
 .slider-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background: rgba(0, 0, 0, 0.6);
+    background-color: #342c66;
+    color: #fff;
     border: none;
     border-radius: 50%;
-    color: white;
-    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
     cursor: pointer;
-    z-index: 10;
-    transition: background 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.slider-arrow:hover {
-    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
 }
 
 .left-arrow {
-    left: 0;
+    left: 10px;
 }
 
 .right-arrow {
-    right: 0;
+    right: 10px;
 }
 
+.slider-arrow:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .certificate-card {
-        width: 250px;
-        height: 170px;
+        flex: 0 0 200px;
     }
-    
-    .certificate-slider-container {
-        padding: 0 40px;
+
+    .slider-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
     .certificate-card {
-        width: 200px;
-        height: 140px;
-    }
-    
-    .certificate-slider-container {
-        padding: 0 30px;
+        flex: 0 0 150px;
     }
 }
 
 
 /* Contact Section */
-#contact {
-    padding: 80px 20px;
+#contact h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+#contact p {
     text-align: center;
 }
 
@@ -291,13 +358,12 @@ form input, form textarea {
     margin-bottom: 15px;
     border-radius: 5px;
     border: 1px solid #ddd;
-    background-color: #fff;
-    color: #333;
 }
 
 form button {
     padding: 12px 20px;
     background-color: #273554;
+    align-items: center;
     color: #f5f0e6;
     border-radius: 5px;
     border: none;
@@ -305,47 +371,57 @@ form button {
     transition: background-color 0.3s ease;
 }
 
+
 form button:hover {
     background-color: #704824;
 }
 
 footer {
-    background-color: #2e373e;
     text-align: center;
     padding: 20px 0;
     color: #f5f0e6;
 }
 
 
-@media (max-width: 768px) {
-    .home h1 {
-        font-size: 28px;
-    }
 
-    .home p {
-        font-size: 16px;
-    }
-
-    .project {
-        max-width: 100%;
-    }
-
-    .certificate-card {
-        width: 150px; /* Adjust for smaller screens */
-    }
+/* Social Icons Container */
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-@media (max-width: 480px) {
-    .navbar .menu {
-        flex-direction: column;
-        gap: 10px;
-    }
+/* Social Icon Style */
+.social-icon {
+    font-size: 30px; /* Size of the icons */
+    color: #fff; /* White color for the icons */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition on hover */
+}
 
-    .home h1 {
-        font-size: 24px;
-    }
+/* Hover Effect */
+.social-icon:hover {
+    color: #1da1f2; /* Twitter Blue */
+}
 
-    .home p {
-        font-size: 14px;
-    }
+/* Hover Effect for Each Icon */
+.social-icon:hover i {
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}
+
+/* Optional: Add different colors for each icon */
+.social-icon:nth-child(1):hover {
+    color: #1da1f2; /* Twitter Blue */
+}
+
+.social-icon:nth-child(2):hover {
+    color: #0077b5; /* LinkedIn Blue */
+}
+
+.social-icon:nth-child(3):hover {
+    color: #f8f6f6; /* GitHub  */
+}
+
+.social-icon:nth-child(4):hover {
+    color: #e1306c; /* Instagram Pink */
 }

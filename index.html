@@ -5,11 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="particles-config.js"></script>
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- Swiper.js JavaScript -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
 </head>
 <body>
+    <div id="particles-js"></div>
+
     <header class="navbar">
         <h1></h1>
-        <nav class="menu">
+        <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="menu" id="menu">
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
@@ -17,12 +32,13 @@
             <a href="#contact">Contact</a>
         </nav>
     </header>
+    
 
     <section id="home" class="home">
         <div class="content">
-            <img src="anas_image.jpeg" alt="Profile Picture">
-            <div>
-                <h1>Hello, I'm Anas.</h1>
+            <img src="anas_image.jpeg" alt="Profile Photo" class="profile-photo">
+            <div class="text">
+                <h1 id="typed-text"></h1>
                 <p>Let's embrace the journey of innovation through data and technology.</p>
                 <p>Inspire, Innovate, and Transform through Data Science.</p>
                 <a href="#projects" class="btn">View My Work</a>
@@ -34,7 +50,7 @@
     <section id="about">
         <div class="content">
             <h2>About Me</h2>
-            <p>I'm a passionate Data Scientist, driven by the power of data and technology to create meaningful change. With expertise in data analysis, machine learning, and data-driven solutions, I thrive on solving complex problems and driving innovation.</p>
+            <p>I'm a passionate Data Scientist, driven by the power of data and technology to create meaningful change. With expertise in data science, machine learning, and data-driven solutions, I thrive on solving complex problems and driving innovation.</p>
             <p>My mission is to empower businesses and individuals through data, helping them unlock new opportunities and make informed decisions. I believe in continuous learning and adapting to the ever-evolving world of data science.</p>
         </div>
     </section>
@@ -46,19 +62,19 @@
             <p>Explore some of the exciting projects I've worked on, where I applied my skills in data science to solve real-world problems and create impactful solutions.</p>
             <div class="project-list">
                 <div class="project">
-                    <h3>House Price Prediction</h3>
-                    <p>Developed an end-to-end machine learning model to predict house prices with an accuracy of 89%. The model incorporated feature engineering, multivariate analysis, and MLOps integration for seamless deployment.</p>
-                    <a href="#project-details" class="btn">Learn More</a>
+                    <h3>Advanced Regression Model for Real Estate Valuation</h3>
+                    <p>Engineered a robust machine learning pipeline to predict real estate prices with an accuracy of 89%. Leveraged advanced feature engineering techniques, multivariate statistical analysis, and hyperparameter tuning to enhance model performance. Integrated the solution with MLOps tools for automated deployment and monitoring, ensuring scalability and reliability in production environments.</p>
+                    <a href="https://github.com/mohammadanas02/House-Price-Prediction-Model" class="btn">Learn More</a>
                 </div>
                 <div class="project">
-                    <h3>Wine Quality Analysis</h3>
-                    <p>Analyzed a wine quality dataset using various machine learning techniques to predict wine quality based on various chemical properties. Focused on feature selection and model optimization.</p>
-                    <a href="#project-details" class="btn">Learn More</a>
+                    <h3>Household Services Application</h3>
+                    <p>Designed a scalable, role-based platform enabling seamless interaction between customers and service professionals. Implemented service request lifecycle management, secure user authentication, and admin-controlled workflows. Built using Flask for a modular backend, Jinja2 and Bootstrap for responsive UI, and SQLite for relational data storage. Integrated dynamic service search and robust access control mechanisms.</p>
+                    <a href="https://github.com/mohammadanas02/Household-Service-Application" class="btn">Learn More</a>
                 </div>
                 <div class="project">
                     <h3>Business Data Management</h3>
-                    <p>Developed an end-to-end machine learning model to predict house prices with an accuracy of 89%. The model incorporated feature engineering, multivariate analysis, and MLOps integration for seamless deployment.</p>
-                    <a href="#project-details" class="btn">Learn More</a>
+                    <p>Awarded the Best Capstone Project for executing a comprehensive analysis of inefficiencies in inventory management, transportation logistics, and payment collections for NN Traders, a B2B home textiles business. Utilized advanced data collection and visualization tools to identify bottlenecks, optimize operations, and enhance profitability. Delivered actionable insights to streamline workflows and improve decision-making processes.</p>
+                    <a href="https://github.com/mohammadanas02/Business-Data-Management-Project" class="btn">Learn More</a>
                 </div>
             </div>
         </div>
@@ -66,10 +82,10 @@
 
     <section id="certificates" class="certificates">
         <div class="certificate-container">
-            <h2>My Certificates</h2>
+            <h2>Certificates</h2>
             <div class="certificate-slider-container">
                 <button class="slider-arrow left-arrow" id="leftArrow">&lt;</button>
-                <div class="certificate-slider">
+                <div class="certificate-slider" id="certificateSlider">
                     <div class="certificate-card">
                         <img src="Tata Certificate_page-0001.jpg" alt="Certificate 1">
                     </div>
@@ -86,13 +102,14 @@
                         <img src="Kaggle certificate.png" alt="Certificate 5">
                     </div>
                     <div class="certificate-card">
-                        <img src="Kaggle sql.jpeg" alt="Certificate 5">
+                        <img src="Kaggle sql.jpeg" alt="Certificate 6">
                     </div>
                 </div>
                 <button class="slider-arrow right-arrow" id="rightArrow">&gt;</button>
             </div>
         </div>
     </section>
+    
 
     <section id="contact">
         <div class="content">
@@ -110,8 +127,19 @@
 
     <footer>
         <p>&copy; 2024 Mohammad Anas. All rights reserved.</p>
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="https://X.com/mohammadanas02" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/mohammad-anas02/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/mohammadanas02" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/__akanas/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
     </footer>
-    <script src="script.js"></script>   
+    
+    <script src="script.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="particles-config.js"></script>
+
 </body>
 </html>
 
