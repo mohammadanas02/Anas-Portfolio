@@ -111,7 +111,7 @@ body {
 }
 
 .home img {
-    width: 50%;
+    width: 70%;
     max-width: 400px;
     height: auto;
     border-radius: 15px;
@@ -178,6 +178,19 @@ body {
     line-height: 1.6;
 }
 
+/* Scrolling effects */
+
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Projects Section */
 /* #projects {
     padding: 80px 20px;
@@ -193,6 +206,7 @@ body {
 
 #projects p{
     text-align: center;
+    padding: 0px 10px
 }
 
 .project-list {
@@ -237,9 +251,10 @@ body {
 
 @media (max-width: 768px) {
     .project {
-        max-width: 100%;
+        max-width: 80%;
     }
 }
+
 
 .certificates {
     font-size: 32px;
@@ -251,10 +266,14 @@ body {
 }
 
 .certificate-container h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #fffefe;
+    font-size: 32px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 30px 10px;
 }
+
 
 .certificate-slider-container {
     display: flex;
@@ -332,7 +351,7 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .certificate-card {
         flex: 0 0 150px;
     }
@@ -353,18 +372,21 @@ body {
 }
 
 form input, form textarea {
-    width: 100%;
+    width: 100%; /* Reduce the width */
+    /* max-width: 1200px; Limit the maximum width */
     padding: 10px;
-    margin-bottom: 15px;
+    margin: 15px auto; /* Center the textarea */
+    display: block; /* Ensure centering works */
     border-radius: 5px;
     border: 1px solid #ddd;
 }
-
 form button {
     padding: 12px 20px;
     background-color: #273554;
     align-items: center;
     color: #f5f0e6;
+    margin: 15px auto; /* Center the textarea */
+    display: block; 
     border-radius: 5px;
     border: none;
     cursor: pointer;
